@@ -2,9 +2,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-type NODE_ENV_VALUE = "development" | "production";
+type NODE_ENV_VALUES = "development" | "production";
 
-export const NODE_ENV = (process.env.NODE_ENV as NODE_ENV_VALUE) || "development";
+export const NODE_ENV = (process.env.NODE_ENV as NODE_ENV_VALUES) || "development";
 export const __production__ = NODE_ENV === "production";
 
 export const API_PORT = parseInt(process.env.API_PORT as string) || 5000;
