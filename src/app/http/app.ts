@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import { API_PORT } from '../../env/variables';
 
 export const createServer = async function(): Promise<express.Application> {
     
@@ -8,8 +9,8 @@ export const createServer = async function(): Promise<express.Application> {
     app.use(express.json());
     app.use(morgan('dev'));
 
-    app.listen(5000, function() {
-        console.log('[API]: started [PORT]: 5000');
+    app.listen(API_PORT, function() {
+        console.log('[API]: started [PORT]: ' + API_PORT);
     });
 
     return app;
