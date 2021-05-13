@@ -22,7 +22,7 @@ export class  User  extends BaseEntity  {
     @Column()
     isActive: boolean;
 
-    @Column("time with time zone")
+    @Column("timestamp")
     addedAt: Date;
 
 }
