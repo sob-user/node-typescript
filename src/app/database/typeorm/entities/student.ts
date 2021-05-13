@@ -1,33 +1,32 @@
 import { Entity,  PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
-
-const mostLongestFirstName: number = 1000;
-const mostLongestLastName: number = 666;
-
+import { Length, IsEmail, IsDate, IsBoolean, IsString, IsUUID } from 'class-validator';
 
 @Entity()
 export class Student  extends BaseEntity  {
     @PrimaryGeneratedColumn("uuid")
+    @IsUUID()
     id: string;
 
-    @Column({
-        unique: true
-    })
-    email: string;
-
-    @Column({
-        length: mostLongestFirstName
-    })
+    @Column()
+    @IsString()
+    @Length(1, 1000)
     firstName: string;
 
-    @Column({
-        length: mostLongestLastName
-    })
+    @Column()
+    @IsString()
+    @Length(1, 666)
     lastName: string;
 
     @Column()
+    @IsEmail()
+    email: string;
+
+    @Column()
+    @IsBoolean()
     isActive: boolean;
 
     @Column("timestamp")
+    @IsDate()
     addedAt: Date;
 
 }

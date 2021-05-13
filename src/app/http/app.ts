@@ -11,6 +11,8 @@ export const createServer = async function(): Promise<express.Application> {
     const app: express.Application = express();
 
     app.use(express.json());
+    app.use(express.urlencoded({extended: false}));
+
     app.use(morgan('dev'));
 
     app.use(`${API_BASE_URL}`, v1Router);

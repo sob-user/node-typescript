@@ -7,7 +7,7 @@ v1Router.get('/', function(_req: Request, res: Response) {
     res.json({ message: 'Welcome to Skill API!' })
 });
 
-v1Router.use('/user', studentRouter);
+v1Router.use('/student', studentRouter);
 
 v1Router.use('*', function (_req: Request, res: Response) {
     res.send('[ERROR]: Resource not found!')
