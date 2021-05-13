@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { userRouter } from '../../modules/user/userRouter';
+import { studentRouter } from '../../modules/student/studentRouter';
 
 const v1Router: Router = Router();
 
@@ -7,7 +7,7 @@ v1Router.get('/', function(_req: Request, res: Response) {
     res.json({ message: 'Welcome to Skill API!' })
 });
 
-v1Router.use('/user', userRouter);
+v1Router.use('/user', studentRouter);
 
 v1Router.use('*', function (_req: Request, res: Response) {
     res.send('[ERROR]: Resource not found!')

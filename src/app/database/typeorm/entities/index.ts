@@ -1,8 +1,6 @@
-import { User } from './user';
-// import { Skill } from './skill';
-// import { Category } from './category';
+import { Student} from './student';
 
-const entities = [User]
-const entitiesObject = { User }
+const entities = [Student]
+const entitiesObject = { Student }
 
 export { entities, entitiesObject }

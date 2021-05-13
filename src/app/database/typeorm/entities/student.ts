@@ -5,9 +5,14 @@ const mostLongestLastName: number = 666;
 
 
 @Entity()
-export class  User  extends BaseEntity  {
+export class Student  extends BaseEntity  {
     @PrimaryGeneratedColumn("uuid")
     id: string;
+
+    @Column({
+        unique: true
+    })
+    email: string;
 
     @Column({
         length: mostLongestFirstName
